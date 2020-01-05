@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, TouchableHighlight } from 'react-native'
+import { Link } from 'react-router-native'
+import { View, TouchableHighlight, TouchableOpacity, Text } from 'react-native'
 import { t } from 'react-native-tailwindcss'
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
@@ -12,55 +13,35 @@ import {
 
 
 // this file is a mess clean this up
-const BottomNav = ({setPage}) => {
+const BottomNav = ({history}) => {
 
   return (
     <View style={[t.absolute, t.bottom0, t.flex, t.flexRow, t.bgGray500 ]}>
-      <TouchableHighlight
-        underlayColor='#718096'
-        onPress={() => setPage('Home')}
-        style={[t.flex1, t.bgGray500, t.justifyCenter, t.hAuto]}
-      >
-      <View style={[t.pY8 ]}>
-        <FontAwesomeIcon size={20} style={{alignSelf: 'center'}} icon={faHome}/>
-      </View>
-      </TouchableHighlight>
-      <TouchableHighlight
-        underlayColor='#718096'
-        onPress={() => setPage('Search')}
-        style={[t.flex1, t.bgGray500]}
-      >
-      <View style={[t.pY8 ]}>
-        <FontAwesomeIcon size={20} style={{alignSelf: 'center'}} icon={faSearch}/>
+      <Link to="/" style={[t.flex1]}component={TouchableOpacity}>
+        <View style={[t.p8,t.flex1]}>
+          <FontAwesomeIcon size={20} icon={faHome}/>
         </View>
-      </TouchableHighlight>
-      <TouchableHighlight
-        underlayColor='#718096'
-        onPress={() => setPage('Add Photo')}
-        style={[t.flex1, t.bgGray500]}
-      >
-      <View style={[t.pY8 ]}>
-        <FontAwesomeIcon size={20} style={{alignSelf: 'center'}} icon={faPlusSquare}/>
+      </Link>
+      <Link to="/search" style={[t.flex1]}component={TouchableOpacity}>
+        <View style={[t.p8,t.flex1]}>
+          <FontAwesomeIcon size={20} icon={faSearch}/>
         </View>
-      </TouchableHighlight>
-      <TouchableHighlight
-        underlayColor='#718096'
-        onPress={() => setPage('Heart')}
-        style={[t.flex1, t.bgGray500]}
-      >
-        <View style={[t.pY8 ]}>
-        <FontAwesomeIcon size={20} style={{alignSelf: 'center'}} icon={faHeart}/>
+      </Link>
+      <Link to="/addPhoto" style={[t.flex1]}component={TouchableOpacity}>
+        <View style={[t.p8,t.flex1]}>
+          <FontAwesomeIcon size={20} icon={faPlusSquare}/>
         </View>
-      </TouchableHighlight>
-      <TouchableHighlight
-        underlayColor='#718096'
-        onPress={() => setPage('User')}
-        style={[t.flex1, t.bgGray500]}
-      >
-      <View style={[t.pY8 ]}>
-        <FontAwesomeIcon size={20} style={{alignSelf: 'center'}} icon={faUser}/>
+      </Link>
+      <Link to="/likes" style={[t.flex1]}component={TouchableOpacity}>
+        <View style={[t.p8,t.flex1]}>
+          <FontAwesomeIcon size={20} icon={faHeart}/>
         </View>
-      </TouchableHighlight>
+      </Link>
+      <Link to="/myPhotos" style={[t.flex1]}component={TouchableOpacity}>
+        <View style={[t.p8, t.flex1]}>
+          <FontAwesomeIcon size={20} icon={faUser}/>
+        </View>
+      </Link>
     </View>
   )
 }
