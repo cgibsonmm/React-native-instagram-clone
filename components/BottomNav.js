@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-native'
-import { View, TouchableHighlight, TouchableOpacity, Text } from 'react-native'
-import { t } from 'react-native-tailwindcss'
+import React from 'react';
+import { Link } from 'react-router-native';
+import { View, TouchableOpacity} from 'react-native';
+import { t } from 'react-native-tailwindcss';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   faHome,
@@ -9,12 +9,11 @@ import {
   faUser,
   faHeart,
   faPlusSquare
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
 
 
-// this file is a mess clean this up
-const BottomNav = ({history}) => {
 
+export default BottomNav = () => {
   return (
     <View style={[t.absolute, t.bottom0, t.flex, t.flexRow, t.bgGray500 ]}>
       <Link to="/" style={[t.flex1]}component={TouchableOpacity}>
@@ -46,5 +45,4 @@ const BottomNav = ({history}) => {
   )
 }
 
-export default BottomNav
 
