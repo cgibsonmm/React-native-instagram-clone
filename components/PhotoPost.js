@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image} from 'react-native';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faHeart, faComment, faPaperPlane, faBookmark} from '@fortawesome/free-solid-svg-icons';
+import { View, Text, Image} from 'react-native';
 import {t} from 'react-native-tailwindcss';
-
+import ButtonRow from './ButtonRow';
 
 const PhotoPost = ({post}) => {
   const {image_url, username} = post
@@ -14,22 +12,8 @@ const PhotoPost = ({post}) => {
         <Text style={[t.textXl, t.pL2, t.fontMedium]}>{username}</Text>
       </View>
       <Image style={{aspectRatio: 1}} source={{uri: `http://localhost:3000${image_url}`}}/>
-      <View style={[t.flex, t.flex1, t.flexRow]}>
-        <TouchableOpacity style={[t.p3]}>
-          <FontAwesomeIcon size={20} icon={faHeart}/>
-        </TouchableOpacity>
-        <TouchableOpacity style={[t.p3]}>
-          <FontAwesomeIcon size={20} icon={faComment}/>
-        </TouchableOpacity>
-        <TouchableOpacity style={[t.p3]}>
-          <FontAwesomeIcon size={20} icon={faPaperPlane}/>
-        </TouchableOpacity>
-        <TouchableOpacity style={[t.p3, t.mLAuto]}>
-          <FontAwesomeIcon size={20} icon={faBookmark}/>
-        </TouchableOpacity>
-      </View>
+      <ButtonRow />
     </View>
   )
 }
-
 export default PhotoPost

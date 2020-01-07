@@ -11,8 +11,6 @@ import {
   faPlusSquare
 } from '@fortawesome/free-solid-svg-icons';
 
-
-
 export default BottomNav = () => {
   return (
     <View style={[t.absolute, t.bottom0, t.flex, t.flexRow, t.bgGray500 ]}>
