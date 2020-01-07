@@ -38,7 +38,7 @@ export default BottomNav = () => {
       </Link>
       <Link to="/myPhotos" style={[t.flex1]}component={TouchableOpacity}>
         <View style={[t.p8, t.flex1]}>
-          <FontAwesomeIcon size={20} icon={faUser}/>
+          <FontAwesomeIcon style={{textAlign:'center'}} size={20} icon={faUser}/>
         </View>
       </Link>
     </View>

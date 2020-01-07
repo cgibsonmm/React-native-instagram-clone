@@ -16,7 +16,7 @@ import MyPhotos from './pages/MyPhotos';
 // Main App
 function App() {
   return (
-    <SafeAreaView style={[t.bgGray200, t.flex, t.hFull , t.wFull]}>
+    <SafeAreaView style={[t.bgGray100, t.flex, t.hFull , t.wFull]}>
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/search' component={Search} />

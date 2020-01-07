@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Axios from 'axios'
-import { View, Text, Image} from 'react-native'
-import {t} from 'react-native-tailwindcss'
+import {ScrollView} from 'react-native';
+import PhotoPost from '../components/PhotoPost';
 
 const Home = () => {
   const [posts, setPosts] = useState([])
@@ -14,19 +14,14 @@ const Home = () => {
       .catch(e => setPosts(e.message))
   }, [])
 
-
   return (
-    <View>
+    <ScrollView>
       {posts.map((post, index) => {
-        return(<View key={index}>
-          <View style={[t.flex, t.flexRow, t.itemsCenter, t.p2]}>
-            <Image style={[t.h8, t.w8, t.bgGray500, t.roundedFull]}/>
-            <Text style={[t.textXl, t.pL2]}>{post.username}</Text>
-          </View>
-          <Image style={{aspectRatio: 1}} source={{uri: `http://localhost:3000${post.image_url}`}}/>
-        </View>)
+        return(
+          <PhotoPost key={index} post={post} />
+        )
       })}
-    </View>
+    </ScrollView>
   )
 }
 
